@@ -1,0 +1,148 @@
+#include <iostream>
+#include <vector>
+#include <Windows.h>
+
+using namespace std;
+
+class FootbalTeam
+{
+public:
+
+
+protected:
+	string Name;
+	int Num = int();
+};
+
+class FirstFootbalTeam : public FootbalTeam
+{
+public:
+	FirstFootbalTeam(const string name, const int num, const int score, const int fine)
+	{
+		Name = name;
+		Num = num;
+		Score = score;
+		Fine = fine;
+	}
+	
+	void print()
+	{
+		cout << "Название комманды: " << Num << endl;
+		cout << "Количество игроков в комманде: " << Name << endl;
+		cout << "Количество очков комманды: " << Score << endl;
+		cout << "Количество штрафов комманды: " << Fine << endl;
+	}
+
+private:
+	int Score;
+	int Fine;
+};
+
+class SecondFootbalTeam : public FootbalTeam
+{
+public:
+	SecondFootbalTeam(const string name, const int num, const int score, const string trener)
+	{
+		Name = name;
+		Num = num;
+		Score = score;
+		Trener = trener;
+
+	}
+
+	void print()
+	{
+		cout << "Название комманды: " << Num << endl;
+		cout << "Количество игроков в комманде: " << Name << endl;
+		cout << "Количество очков комманды: " << Score << endl;
+		cout << "Имя тренера: " << Trener << endl;
+	}
+
+private:
+	int Score;
+	string Trener;
+};
+
+class ThirdFootbalTeam : public FootbalTeam
+{
+public:
+	ThirdFootbalTeam(const string name, const int num, const int score, const int out)
+	{
+		Name = name;
+		Num = num;
+		Score = score;
+		Out = out;
+	}
+
+	void print()
+	{
+		cout << "Название комманды: " << Num << endl;
+		cout << "Количество игроков в комманде: " << Name << endl;
+		cout << "Количество очков комманды: " << Score << endl;
+		cout << "Количество аутов в комманде: " << Out << endl;
+	}
+
+private:
+	int Score;
+	int Out;
+};
+
+int main()
+{
+	SetConsoleCP(1251);
+	SetConsoleOutputCP(1251);
+
+	int num, score, fine, out;
+	string name, trener;
+
+	cout << "Введите название первой комманды: ";
+	cin >> name;
+	cout << "Введите количество игроков в комманде: ";
+	cin >> num;
+	cout << "Введите количество очков комманды: ";
+	cin >> score;
+	cout << "Введите количество штрафов комманды: ";
+	cin >> fine;
+
+	FirstFootbalTeam fft(name, num, score, fine);
+
+	cout << endl;
+
+	fft.print();
+
+	cout << endl;
+
+	cout << "Введите название второй комманды: ";
+	cin >> name;
+	cout << "Введите количество игроков в комманде: ";
+	cin >> num;
+	cout << "Введите количество очков комманды: ";
+	cin >> score;
+	cout << "Введите имя тренера: ";
+	cin >> trener;
+
+	SecondFootbalTeam sft(name, num, score, trener);
+
+	cout << endl;
+
+	sft.print();
+
+	cout << endl;
+
+	cout << "Введите название третьей комманды: ";
+	cin >> name;
+	cout << "Введите количество игроков в комманде: ";
+	cin >> num;
+	cout << "Введите количество очков комманды: ";
+	cin >> score;
+	cout << "Введите количество аутов в комманде: ";
+	cin >> out;
+
+	ThirdFootbalTeam tft(name, num, score, out);
+	
+	cout << endl;
+
+	tft.print();
+
+	return 0;
+}
